@@ -1,0 +1,14 @@
+<h1><%= @store.name %>:</h1>
+<h3><%= @item.name %></h3>
+<h5><%= @item.body %></h5>
+<br />
+<br />
+<br />
+<br />
+<%= link_to 'Edit Item', edit_store_item_path([@store, @item]) %>
+<br />
+<br />
+<%= link_to 'Delete Item', [@store, @item], method: :delete %>
+<br />
+<br />
+<%= link_to 'Back To Item List', store_items_path(@store) %>

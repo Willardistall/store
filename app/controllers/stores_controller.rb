@@ -1,5 +1,5 @@
 class StoresController < ApplicationController
-  before_action :set_sub, only: [:show, :update, :edit, :destroy]
+  before_action :set_store, only: [:show, :update, :edit, :destroy]
 
   
   def index
@@ -15,11 +15,11 @@ class StoresController < ApplicationController
   end
 
   def edit
-    render partial "form"
+    render partial: "form"
   end
 
   def create
-    @store = Store.new(sub_params)
+    @store = Store.new(store_params)
 
       if @store.save
         redirect_to stores_path
@@ -48,7 +48,7 @@ class StoresController < ApplicationController
   end
 
   def store_params
-    params.require(:sub).permit(:name)
+    params.require(:store).permit(:name)
   end
 
     
